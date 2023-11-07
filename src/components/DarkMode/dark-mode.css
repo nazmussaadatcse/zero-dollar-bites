@@ -1,0 +1,8 @@
+.dark {
+    background-color: #333; /* Dark background color */
+    color: #fff; /* Light text color */
+}
+
+.dark .navbar {
+    background-color: #111; /* Dark navbar background color */
+}
