@@ -42,7 +42,7 @@ const AllProducts = () => {
                                     <p className=" font-semibold">Additional Notes: <span className="lowercase">{food?.additional_notes}</span></p>
                                 </div>
                                 <div className="py-4 text-left  w-full">
-                                    <Link to={`/details/${food?._id}`} className="btn btn-outline text-white btn-sm rounded-md bg-purple-900">
+                                    <Link to={`/food/${food?._id}`} className="btn btn-outline text-white btn-sm rounded-md bg-purple-900">
                                         Details
                                     </Link>
                                     

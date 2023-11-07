@@ -59,13 +59,13 @@ const AddProduct = () => {
 
     return (
         <div className="bg-green-400 rounded-md m-4 p-16 lg:w-3/4 mx-auto text-black">
-            <h2 className="font-bold text-xl">Add a Product</h2>
+            <h2 className="font-bold text-xl">Add Food</h2>
             <form onSubmit={handleAddProduct}>
                 {/* name and Image row  */}
                 <div className="md:flex gap-4 my-2">
                     <div className="form-control w-full md:w-1/2">
                         <label className="label">
-                            <span className="label-text">Product Name</span>
+                            <span className="label-text">Food Name</span>
                         </label>
                         <input type="text" name="name" required placeholder="Product name" className="input input-bordered w-full rounded-md " />
                     </div>
