@@ -17,16 +17,16 @@ const Header = () => {
 
 
     const navLinks = <>
-        <li className="border rounded-full mx-1"><NavLink to={"/"}>Home</NavLink></li>
-        <li className="border rounded-full mx-1"><NavLink to={"/allproduct"}>Available Foods</NavLink></li>
-        <li className="border rounded-full mx-1"><NavLink to={"/addfood"}>Add Food</NavLink></li>
-        <li className="border rounded-full mx-1"><NavLink to={"/managemyfood"}>Manage My Foods</NavLink></li>
-        <li className="border rounded-full mx-1"><NavLink to={"/myfoodrequest"}>My Food Request</NavLink></li>
+        <li className=" rounded-full"><NavLink to={"/"}>Home</NavLink></li>
+        <li className=" rounded-full"><NavLink to={"/availablefoods"}>Available Foods</NavLink></li>
+        <li className=" rounded-full"><NavLink to={"/addfood"}>Add Food</NavLink></li>
+        <li className=" rounded-full"><NavLink to={"/managemyfood"}>Manage My Foods</NavLink></li>
+        <li className=" rounded-full"><NavLink to={"/myfoodrequest"}>My Food Request</NavLink></li>
     </>
     return (
 
 
-        <div className={`navbar gap-1 mb-8 py-4 shadow-md bg-gray-100`}>
+        <div className={`navbar gap mb-8 py-4 shadow-md bg-gray-100`}>
             <img className="lg:flex justify-center items-center w-28 md:w-32 " src="https://i.ibb.co/kJ4Jjzm/zero-dollar-bites-logo.png" alt="" />
             <div className="navbar-start">
                 <div className="dropdown">
@@ -67,8 +67,9 @@ const Header = () => {
 
                 }
             </div>
-            <img src="" alt="" />  
+            <div>
             <DarkModeToggleButton></DarkModeToggleButton>          
+            </div>
         </div>
     );
 };

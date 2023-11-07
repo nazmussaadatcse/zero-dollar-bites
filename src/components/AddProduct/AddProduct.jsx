@@ -24,7 +24,7 @@ const AddProduct = () => {
         const additional_notes = form.additional_notes.value;
 
         const donatorPhoto = user.photoURL;
-        const donatorName = user.Name;
+        const donatorName = user.displayName;
         const email = user.email;
         const foodStatus = 'available';
 
@@ -84,13 +84,8 @@ const AddProduct = () => {
                         <label className="label">
                             <span className="label-text">Quantity</span>
                         </label>
-                        <select name="quantity" className="select select-bordered w-full rounded-md">
-                            <option value="5">5</option>
-                            <option value="4">4</option>
-                            <option value="3">3</option>
-                            <option value="2">2</option>
-                            <option value="1">1</option>
-                        </select>
+                        <input type="number" name="quantity" required placeholder="Food Quantity : 1 for 1 person" className="input input-bordered w-full rounded-md " />
+                        
                     </div>
                     <div className="form-control w-full md:w-1/2">
                         <label className="label">
