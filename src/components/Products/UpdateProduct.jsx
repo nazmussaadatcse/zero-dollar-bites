@@ -60,7 +60,7 @@ const UpdateProduct = () => {
         }
         console.log(newFood);
 
-        fetch(`http://localhost:5000/requested/${id}`, {
+        fetch(`http://localhost:5000/food/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -70,7 +70,7 @@ const UpdateProduct = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.insertedId) {
+                if (data.modifiedCount) {
                     Swal.fire({
                         position: 'top-center',
                         icon: 'success',
