@@ -19,6 +19,9 @@ const AllProducts = () => {
 
     return (
         <div>
+            <h2 className='uppercase flex justify-center p-4 my-4 font-bold text-xl text-purple-700'>
+                All Available Food
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {foods.map(food => (
                     <div key={food._id} className="border-purple-200 border rounded-lg m-1">

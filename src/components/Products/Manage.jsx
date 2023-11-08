@@ -7,7 +7,6 @@ import { useParams } from "react-router-dom";
 
 const Manage = () => {
 
-    const [foodReq, setFoodReq] = useState([]);
     const { user } = useContext(AuthContext);
 
     const [foods, setFoods] = useState([]);
@@ -32,19 +31,40 @@ const Manage = () => {
 
     console.log(foods);
 
+
+
+    let additional_notes, donation_money, request_date, requesterEmail, requesterName, requesterPhoto;
+    let name, quantity, photo, foodStatus, pickup_location, _id;
+
     foods.map((item) => {
         // Destructure properties from 'item'
-        const {
+        additional_notes = item.additional_notes;
+        donation_money = item.donation_money;
+        request_date = item.request_date;
+        requesterEmail = item.requesterEmail;
+        requesterName = item.requesterName;
+        requesterPhoto = item.requesterPhoto;
+
+        // Destructure properties from 'item.requested'
+        name = item.requested.name;
+        quantity = item.requested.quantity;
+        photo = item.requested.photo;
+        foodStatus = item.requested.foodStatus;
+        pickup_location = item.requested.pickup_location;
+        _id = item.requested._id;
+        // Add other properties from 'item.requested' you need here
+    });
+
+    const newFood = {
+        requester: {
             additional_notes,
             donation_money,
             request_date,
             requesterEmail,
             requesterName,
             requesterPhoto,
-        } = item;
-
-        // Destructure properties from 'item.requested'
-        const {
+        },
+        donator: {
             name,
             quantity,
             photo,
@@ -52,45 +72,53 @@ const Manage = () => {
             pickup_location,
             _id,
             // Add other properties from 'item.requested' you need here
-        } = item.requested;
+        },
+    };
 
-        
-    });
-
-    const newFood = {
-        requester : item,
-        donator : item.requested
-    }
-
-   
-
-  
-    const handleDeliver = (id)=>{
+    const handleDeliver = (id) => {
         console.log(id);
+
 
         fetch('http://localhost:5000/delivered', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(foods)
+            body: JSON.stringify(newFood)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data);
                 if (data.insertedId) {
-                    Swal.fire({
-                        position: 'top-center',
-                        icon: 'success',
-                        title: 'Your Item has been delivered',
-                        showConfirmButton: false,
-                        timer: 1500
+
+
+                    fetch(`http://localhost:5000/requesttodeliver/${id}`, {
+                        method: 'DELETE'
                     })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.deletedCount > 0) {
+                                // console.log('deleted successfully');
+                                const remainingFood = foods.filter(food => food._id !== id);
+                                setFoods(remainingFood);
+                                Swal.fire({
+                                    position: 'top-center',
+                                    icon: 'success',
+                                    title: 'Your Item has been delivered',
+                                    showConfirmButton: false,
+                                    timer: 2000
+                                })
+                                // console.log(foods);
+                            }
+                        })
+
                     // Reset the form
                     // form.reset();
                 }
             })
     }
+
+
 
 
     return (
@@ -110,7 +138,7 @@ const Manage = () => {
                         <p className="text-purple-700 gap-1"><span className="font-bold">Status:</span> {food?.requested.foodStatus}</p>
                         <p className="text-purple-700 gap-1"><span className="font-bold">Request Date:</span> {food?.request_date}</p>
                     </div>
-                    <button onClick={()=>handleDeliver(food._id)} className=" btn btn-xs mt-6 btn-outline rounded-md">
+                    <button onClick={() => handleDeliver(food._id)} className=" btn btn-xs mt-6 btn-outline rounded-md">
                         deliver
                     </button>
                 </div>)
