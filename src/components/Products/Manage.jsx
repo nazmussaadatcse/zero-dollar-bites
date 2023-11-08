@@ -32,43 +32,35 @@ const Manage = () => {
 
     console.log(foods);
 
-    // foods.map((item) => {
-    //     // Destructure properties from 'item'
-    //     const {
-    //         additional_notes,
-    //         donation_money,
-    //         request_date,
-    //         requesterEmail,
-    //         requesterName,
-    //         requesterPhoto,
-    //     } = item;
+    foods.map((item) => {
+        // Destructure properties from 'item'
+        const {
+            additional_notes,
+            donation_money,
+            request_date,
+            requesterEmail,
+            requesterName,
+            requesterPhoto,
+        } = item;
 
-    //     // Destructure properties from 'item.requested'
-    //     const {
-    //         name,
-    //         quantity,
-    //         photo,
-    //         foodStatus,
-    //         pickup_location,
-    //         _id,
-    //         // Add other properties from 'item.requested' you need here
-    //     } = item.requested;
+        // Destructure properties from 'item.requested'
+        const {
+            name,
+            quantity,
+            photo,
+            foodStatus,
+            pickup_location,
+            _id,
+            // Add other properties from 'item.requested' you need here
+        } = item.requested;
 
-    //     // console.log("Additional Notes:", additional_notes);
-    //     // console.log("Donation Money:", donation_money);
-    //     // console.log("Request Date:", request_date);
-    //     // console.log("Requester Email:", requesterEmail);
-    //     // console.log("Requester Name:", requesterName);
-    //     // console.log("Requester Photo:", requesterPhoto);
+        
+    });
 
-    //     // console.log("Name:", name);
-    //     // console.log("Quantity:", quantity);
-    //     // console.log("Photo:", photo);
-    //     // console.log("Pickup Location:", pickup_location);
-    //     // console.log("_id:", _id);
-
-    //     // You can now use these destructured properties as needed
-    // });
+    const newFood = {
+        requester : item,
+        donator : item.requested
+    }
 
    
 
@@ -90,7 +82,7 @@ const Manage = () => {
                     Swal.fire({
                         position: 'top-center',
                         icon: 'success',
-                        title: 'Your Item has been added',
+                        title: 'Your Item has been delivered',
                         showConfirmButton: false,
                         timer: 1500
                     })

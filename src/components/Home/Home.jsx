@@ -1,3 +1,5 @@
+import Contact from "../Contact/Contact";
+import Faq from "../Faq/Faq";
 import Products from "../Products/Products";
 
 const Home = () => {
@@ -6,6 +8,8 @@ const Home = () => {
 
         <div>
             <Products></Products>
+            <Faq></Faq>
+            <Contact></Contact>
         </div>
 
 
