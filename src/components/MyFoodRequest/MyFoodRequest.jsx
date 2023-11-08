@@ -52,7 +52,7 @@ const MyFoodRequest = () => {
                             Swal.fire({
                                 position: 'top-center',
                                 icon: 'success',
-                                title: 'Deleted successfully',
+                                title: 'Cancelled successfully',
                                 showConfirmButton: false,
                                 timer: 1500
                             })

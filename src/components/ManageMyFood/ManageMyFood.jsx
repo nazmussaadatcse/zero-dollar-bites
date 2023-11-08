@@ -86,7 +86,7 @@ const ManageMyFood = () => {
                 accessor: 'expiry_date',
             },
             {
-                Header: 'Update',
+                Header: 'Manage',
                 accessor: (row) => (
                     <Link to={`/manage/${row._id}`}>
                         <button className="btn btn-xs mt-6 m-1 btn-outline rounded-md">manage</button>
@@ -94,9 +94,9 @@ const ManageMyFood = () => {
                 ),
             },
             {
-                Header: 'Manage',
+                Header: 'Update',
                 accessor: (row) => (
-                    <Link to={`/update/${row._id}`}>
+                    <Link to={`/updateproduct/${row._id}`}>
                         <button className="btn btn-xs mt-6 m-1 btn-outline rounded-md">update</button>
                     </Link>
                 ),

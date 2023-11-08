@@ -8,11 +8,14 @@ import AllProducts from "./Products/AllProducts";
 import ProductDetail from "./Products/ProductDetail";
 import ManageMyFood from "./ManageMyFood/ManageMyFood";
 import MyFoodRequest from "./MyFoodRequest/MyFoodRequest";
+import Page404 from "./Shared/Page404";
+import UpdateProduct from "./Products/UpdateProduct";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Root></Root>,
+        errorElement: <Page404></Page404>,
         children: [
             
             {
@@ -42,6 +45,10 @@ const router = createBrowserRouter([
             {
                 path: '/myfoodrequest',
                 element: <MyFoodRequest></MyFoodRequest>,
+            },
+            {
+                path: '/updateproduct/:id',
+                element: <UpdateProduct></UpdateProduct>,
             },
             {
                 path: '/food/:id',
