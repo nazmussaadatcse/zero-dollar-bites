@@ -11,13 +11,14 @@ import MyFoodRequest from "./MyFoodRequest/MyFoodRequest";
 import Page404 from "./Shared/Page404";
 import UpdateProduct from "./Products/UpdateProduct";
 import Manage from "./Products/Manage";
+import PrivateRoute from "./hooks/PrivateRoute";
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Root></Root>,
         errorElement: <Page404></Page404>,
         children: [
-            
+
             {
                 path: '/',
                 element: <Home></Home>,
@@ -32,7 +33,9 @@ const router = createBrowserRouter([
             },
             {
                 path: '/addfood',
-                element: <AddProduct></AddProduct>,
+                element: <PrivateRoute>
+                    <AddProduct></AddProduct>
+                </PrivateRoute>,
             },
             {
                 path: '/availablefoods',
@@ -40,26 +43,36 @@ const router = createBrowserRouter([
             },
             {
                 path: '/managemyfood',
-                element: <ManageMyFood></ManageMyFood>,
+                element: <PrivateRoute>
+                    <ManageMyFood></ManageMyFood>
+                </PrivateRoute>,
             },
             {
                 path: '/myfoodrequest',
-                element: <MyFoodRequest></MyFoodRequest>,
+                element: <PrivateRoute>
+                    <MyFoodRequest></MyFoodRequest>
+                </PrivateRoute>,
             },
             {
                 path: '/updateproduct/:id',
-                element: <UpdateProduct></UpdateProduct>,
+                element: <PrivateRoute>
+                    <UpdateProduct></UpdateProduct>
+                </PrivateRoute>,
             },
             {
                 path: '/food/:id',
-                element: <ProductDetail></ProductDetail>,
+                element: <PrivateRoute>
+                    <ProductDetail></ProductDetail>
+                </PrivateRoute>,
             },
             {
                 path: '/manage/:id',
-                element: <Manage></Manage>,
+                element: <PrivateRoute>
+                    <Manage></Manage>
+                </PrivateRoute>,
             },
-            
-        
+
+
 
         ]
     }
