@@ -135,7 +135,7 @@ const ManageMyFood = () => {
 
         <div className="p-8">
             <div className="flex justify-center p-4">
-                <h2 className="text-xl font-semibold text-green-700">Manage My Food <hr className="p-1 bg-green-700" /> </h2>
+                <h2 className="text-xl font-semibold text-green-700">Manage My Food : {foods.length}<hr className="p-1 bg-green-700" /> </h2>
             </div>
             <table {...getTableProps()} className="table">
                 <thead>

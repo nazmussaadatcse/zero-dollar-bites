@@ -10,7 +10,7 @@ import ManageMyFood from "./ManageMyFood/ManageMyFood";
 import MyFoodRequest from "./MyFoodRequest/MyFoodRequest";
 import Page404 from "./Shared/Page404";
 import UpdateProduct from "./Products/UpdateProduct";
-
+import Manage from "./Products/Manage";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -53,6 +53,10 @@ const router = createBrowserRouter([
             {
                 path: '/food/:id',
                 element: <ProductDetail></ProductDetail>,
+            },
+            {
+                path: '/manage/:id',
+                element: <Manage></Manage>,
             },
             
         

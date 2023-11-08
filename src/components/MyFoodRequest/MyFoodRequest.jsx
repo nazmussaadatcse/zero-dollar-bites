@@ -67,8 +67,7 @@ const MyFoodRequest = () => {
     return (
 
         <div className="border border-gray-200">
-            <h2>total : {foods.length}</h2>
-            <h2 className="uppercase flex justify-center items-center p-2 m-2 mt-4 font-bold text-2xl gap-2 text-purple-700">My Food Request </h2>
+            <h2 className="uppercase flex justify-center items-center p-2 m-2 mt-4 font-bold text-2xl gap-2 text-purple-700">My Food Request : {foods.length}</h2>
           
             
             {
