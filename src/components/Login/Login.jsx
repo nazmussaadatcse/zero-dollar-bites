@@ -57,7 +57,7 @@ const Login = () => {
                     <img src="https://i.ibb.co/kJ4Jjzm/zero-dollar-bites-logo.png" alt="" />
                     <h1 className="text-3xl font-bold">Please Login</h1>
                     <p className="py-6 text-xl">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis eos illo corrupti iste quaerat suscipit dolorem temporibus error, nulla maiores, molestias mollitia architecto neque similique consequatur sapiente, sed nobis quisquam eaque nisi cum eveniet impedit recusandae. Placeat voluptatibus vel quo!
+                    "Join us in making a meaningful impact on the lives of those facing food insecurity. We believe in the power of community and compassion. By contributing your surplus or unneeded food items, you not only prevent waste but also provide nourishment to individuals and families who may not have access to essential meals. Together, we can create a world where zero-dollar bites become a reality, where no one has to go hungry. Your food donations are a lifeline for those in need, a symbol of hope, and a powerful testament to the generosity of our shared humanity. Make a difference today – donate food and be a part of this noble cause."
 
                     </p>
                 </div>

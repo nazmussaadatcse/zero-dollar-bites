@@ -2,40 +2,43 @@
 
 const Footer = () => {
     return (
-        <footer className="footer p-10 bg-base-200 mt-8 text-base-content">
+        <div>
+            <footer className="footer p-10 bg-base-200 mt-8 text-base-content">
             <nav>
-                <header className="footer-title">Services</header>
-                <a className="link link-hover">Branding</a>
-                <a className="link link-hover">Design</a>
-                <a className="link link-hover">Marketing</a>
-                <a className="link link-hover">Advertisement</a>
+                <header className="footer-title">Contact Us</header>
+                <a className="link link-hover">About Us</a>
+                <a className="link link-hover">Donate</a>
+                <a className="link link-hover">Blog</a>
+                <a className="link link-hover">Gallery</a>
             </nav>
             <nav>
-                <header className="footer-title">Company</header>
-                <a className="link link-hover">About us</a>
-                <a className="link link-hover">Contact</a>
-                <a className="link link-hover">Jobs</a>
-                <a className="link link-hover">Press kit</a>
+                <header className="footer-title">Our Impact</header>
+                <a className="link link-hover">FAQ</a>
+                <a className="link link-hover">Resources</a>
+                <a className="link link-hover">Support</a>
+                <a className="link link-hover">Partnerships</a>
             </nav>
             <nav>
-                <header className="footer-title">Legal</header>
+                <header className="footer-title">Testimonials</header>
                 <a className="link link-hover">Terms of use</a>
                 <a className="link link-hover">Privacy policy</a>
                 <a className="link link-hover">Cookie policy</a>
             </nav>
             <form>
-                <header className="footer-title">Newsletter</header>
-                <fieldset className="form-control w-80">
-                    <label className="label">
-                        <span className="label-text">Enter your email address</span>
-                    </label>
-                    <div className="relative">
-                        <input type="text" placeholder="username@site.com" className="input input-bordered w-full pr-16" />
-                        <button className="btn btn-primary absolute top-0 right-0 rounded-l-none">Subscribe</button>
+                <header className="text-2xl">Zero Dollar Bites</header>
+                <fieldset className="form-control ">
+                   
+                    <div className="">
+                        <img className="w-1/2" src="https://i.ibb.co/kJ4Jjzm/zero-dollar-bites-logo.png" alt="" />
                     </div>
                 </fieldset>
             </form>
+            
         </footer>
+        <div className="flex text-center justify-center font-semibold text-sm">
+        <h2>Zero Dollar Bites | copyright@2023 All rights reserved. </h2>
+        </div>
+        </div>
     );
 };
 
