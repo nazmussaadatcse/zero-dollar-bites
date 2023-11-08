@@ -13,7 +13,7 @@ const MyFoodRequest = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/requested`)
+        fetch(`https://zero-dollar-bites-server.vercel.app/requested`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -41,7 +41,7 @@ const MyFoodRequest = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/requested/${id}?email=${email}`, {
+                fetch(`https://zero-dollar-bites-server.vercel.app/requested/${id}?email=${email}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

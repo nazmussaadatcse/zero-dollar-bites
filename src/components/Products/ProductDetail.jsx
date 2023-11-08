@@ -20,7 +20,7 @@ const ProductDetail = () => {
 
     useEffect(() => {
         // Load data 
-        fetch('http://localhost:5000/food')
+        fetch('https://zero-dollar-bites-server.vercel.app/food')
             .then((res) => res.json())
             .then((data) => {
                 setFood(data);
@@ -65,7 +65,7 @@ const ProductDetail = () => {
         };
         console.log(requestDB);
 
-        fetch('http://localhost:5000/requested', {
+        fetch('https://zero-dollar-bites-server.vercel.app/requested', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -8,7 +8,7 @@ const Banner = () => {
     const [delivered, setDelivered] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/delivered`)
+        fetch(`https://zero-dollar-bites-server.vercel.app/delivered`)
             .then((res) => res.json())
             .then((data) => {
                 setDelivered(data);

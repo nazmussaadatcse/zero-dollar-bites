@@ -9,7 +9,7 @@ const AllProducts = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/food`)
+        fetch(`https://zero-dollar-bites-server.vercel.app/food`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
