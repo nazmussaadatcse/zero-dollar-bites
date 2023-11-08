@@ -16,6 +16,8 @@ const Products = () => {
                 setFoods(data)
             })
     }, []);
+
+    
     const firstSixFoods = foods.slice(0, 6); // Get the first 6 items
 
 
