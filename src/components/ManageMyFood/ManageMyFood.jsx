@@ -10,22 +10,22 @@ const ManageMyFood = () => {
 
     const { user } = useContext(AuthContext);
     const [foods, setFoods] = useState([]);
-    console.log(user?.email);
-    console.log(foods);
+    // console.log(user?.email);
+    // console.log(foods);
     const data = foods;
 
     useEffect(() => {
         fetch(`http://localhost:5000/food`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 const filteredFoods = data.filter(food => food.email === user?.email);
                 setFoods(filteredFoods);
             })
     }, [user]);
 
     const handleDelete = (id) => {
-        console.log('handleDelete', id);
+        // console.log('handleDelete', id);
         const email = user.email;
 
         Swal.fire({

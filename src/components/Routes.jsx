@@ -7,7 +7,7 @@ import Home from "./Home/Home";
 import AllProducts from "./Products/AllProducts";
 import ProductDetail from "./Products/ProductDetail";
 import ManageMyFood from "./ManageMyFood/ManageMyFood";
-
+import MyFoodRequest from "./MyFoodRequest/MyFoodRequest";
 
 const router = createBrowserRouter([
     {
@@ -38,6 +38,10 @@ const router = createBrowserRouter([
             {
                 path: '/managemyfood',
                 element: <ManageMyFood></ManageMyFood>,
+            },
+            {
+                path: '/myfoodrequest',
+                element: <MyFoodRequest></MyFoodRequest>,
             },
             {
                 path: '/food/:id',

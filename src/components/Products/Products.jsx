@@ -17,7 +17,7 @@ const Products = () => {
             })
     }, []);
 
-    
+
     const firstSixFoods = foods.slice(0, 6); // Get the first 6 items
 
 
@@ -57,7 +57,7 @@ const Products = () => {
                 ))}
             </div>
             <div className="flex justify-center m-8">
-                <Link to={`/food/`} className="btn btn-outline btn-sm rounded-md btn-outline">
+                <Link to={`/availablefoods`} className="btn btn-outline btn-sm rounded-md btn-outline">
                     Show All
                 </Link>
             </div>
