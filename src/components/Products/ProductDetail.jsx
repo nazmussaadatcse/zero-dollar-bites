@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider";
+import { Helmet } from "react-helmet";
 
 
 const ProductDetail = () => {
@@ -98,6 +99,9 @@ const ProductDetail = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>ZDB | Donor Info</title>
+            </Helmet>
             {filteredFood.map((food) => (
                 <div key={food._id} className="my-12 md:p-12 flex justify-center min-h-screen ">
                     <div className="border p-2 border-green-300 w-full md:flex justify-center md:p-12">
@@ -120,9 +124,7 @@ const ProductDetail = () => {
                             </div>
 
 
-                            <button className=" btn btn-xs bg-white my-2 btn-outline w-24 rounded-md">
-                                add
-                            </button>
+
                             <button onClick={() => document.getElementById('my_modal_3').showModal()} className=" btn btn-xs bg-white my-2 btn-outline w-24 rounded-md">
                                 Request
                             </button>

@@ -4,6 +4,7 @@ import { AuthContext } from "../AuthProvider";
 import { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css'; // Import the styles
+import { Helmet } from "react-helmet";
 
 
 
@@ -59,6 +60,9 @@ const AddProduct = () => {
 
     return (
         <div className="bg-green-400 rounded-md m-4 p-16 lg:w-3/4 mx-auto text-black">
+            <Helmet>
+                    <title>ZDB | Add Food</title>
+                </Helmet>
             <h2 className="font-bold text-xl">Add Food</h2>
             <form onSubmit={handleAddProduct}>
                 {/* name and Image row  */}

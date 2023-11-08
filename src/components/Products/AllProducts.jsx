@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 
 const AllProducts = () => {
 
@@ -19,6 +20,11 @@ const AllProducts = () => {
 
     return (
         <div>
+            <div>
+                <Helmet>
+                    <title>ZDB | Available Food</title>
+                </Helmet>
+            </div>
             <h2 className='uppercase flex justify-center p-4 my-4 font-bold text-xl text-purple-700'>
                 All Available Food
             </h2>

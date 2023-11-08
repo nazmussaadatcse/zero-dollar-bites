@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import React from 'react';
 import { useTable } from 'react-table';
+import { Helmet } from "react-helmet";
 
 
 const ManageMyFood = () => {
@@ -134,6 +135,9 @@ const ManageMyFood = () => {
     return (
 
         <div className="p-8">
+            <Helmet>
+                    <title>ZDB | Manage My Food</title>
+                </Helmet>
             <div className="flex justify-center p-4">
                 <h2 className="text-xl font-semibold text-green-700">Manage My Food : {foods.length}<hr className="p-1 bg-green-700" /> </h2>
             </div>

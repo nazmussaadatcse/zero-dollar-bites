@@ -3,7 +3,8 @@ import { useContext } from "react";
 import { AuthContext } from "../AuthProvider";
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
-
+import { Helmet } from "react-helmet";
+            
 
 const Manage = () => {
 
@@ -123,6 +124,9 @@ const Manage = () => {
 
     return (
         <div className="border border-gray-200">
+            <Helmet>
+                    <title>ZDB | Manage</title>
+                </Helmet>
             <h2 className="uppercase flex justify-center items-center p-2 m-2 mt-4 font-bold text-2xl gap-2 text-purple-700">Manage Food Request : {foods?.length}</h2>
 
 

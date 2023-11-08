@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 
 
@@ -67,6 +68,9 @@ const MyFoodRequest = () => {
     return (
 
         <div className="border border-gray-200">
+            <Helmet>
+                    <title>ZDB | My Food Request</title>
+                </Helmet>
             <h2 className="uppercase flex justify-center items-center p-2 m-2 mt-4 font-bold text-2xl gap-2 text-purple-700">My Food Request : {foods.length}</h2>
           
             

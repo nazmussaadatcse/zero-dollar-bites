@@ -5,7 +5,8 @@ import { useState , useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css'; // Import the styles
 import { useParams } from "react-router-dom";
-
+import { Helmet } from "react-helmet";
+            
 
 
 const UpdateProduct = () => {
@@ -86,7 +87,10 @@ const UpdateProduct = () => {
 
     return (
         <div className="bg-green-400 rounded-md m-4 p-16 lg:w-3/4 mx-auto text-black">
-            <h2 className="font-bold text-xl">Add Food</h2>
+            <Helmet>
+                    <title>ZDB | Update Food</title>
+                </Helmet>
+            <h2 className="font-bold text-xl">Update Food</h2>
             <form onSubmit={handleUpdateProduct}>
                 {/* name and Image row  */}
                 <div className="md:flex gap-4 my-2">
