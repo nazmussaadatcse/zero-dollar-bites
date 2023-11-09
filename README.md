@@ -1,6 +1,6 @@
 # Zero Dollar Bites MERN Stack Project with Firebase Authentication
 [site](https://zero-dollar-bites.web.app/)
-[site2](https://zero-dollar-bites.web.app/)
+[site2](https://whimsical-quokka-c54a71.netlify.app/)
 
 Welcome to Zero Dollar Bites, a powerful MERN (MongoDB, Express, React, Node.js) stack project featuring robust Firebase Authentication. In this repository, we demonstrate the development of a full-stack web application with an emphasis on secure user authentication through Firebase. Firebase Authentication simplifies the process of adding safe and reliable user registration, login, and logout functionality to your web application.
 
