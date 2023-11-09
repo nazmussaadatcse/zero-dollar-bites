@@ -20,7 +20,7 @@ const UpdateProduct = () => {
     // console.log(productId.id);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/food/${id}`,{credentials: 'include'})
+        fetch(`https://zero-dollar-bites-server.vercel.app/food/${id}`,{credentials: 'include'})
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
@@ -61,7 +61,7 @@ const UpdateProduct = () => {
         }
         console.log(newFood);
 
-        fetch(`http://localhost:5000/food/${id}`, {
+        fetch(`https://zero-dollar-bites-server.vercel.app/food/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
