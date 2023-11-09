@@ -20,7 +20,7 @@ const ProductDetail = () => {
 
     useEffect(() => {
         // Load data 
-        fetch('https://zero-dollar-bites-server.vercel.app/food')
+        fetch('http://localhost:5000/food')
             .then((res) => res.json())
             .then((data) => {
                 setFood(data);
@@ -65,12 +65,13 @@ const ProductDetail = () => {
         };
         console.log(requestDB);
 
-        fetch('https://zero-dollar-bites-server.vercel.app/requested', {
+        fetch('http://localhost:5000/requested', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(requestDB)
+            body: JSON.stringify(requestDB),
+            credentials: 'include'
         })
             .then(res => res.json())
             .then(data => {
@@ -84,7 +85,7 @@ const ProductDetail = () => {
                         timer: 1500
                     })
                     // Reset the form
-                    // form.reset();
+                    form.reset();
                 }
             })
 

@@ -13,7 +13,7 @@ const MyFoodRequest = () => {
 
 
     useEffect(() => {
-        fetch(`https://zero-dollar-bites-server.vercel.app/requested`)
+        fetch(`http://localhost:5000/requested`,{credentials: 'include'})
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -41,8 +41,9 @@ const MyFoodRequest = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`https://zero-dollar-bites-server.vercel.app/requested/${id}?email=${email}`, {
-                    method: 'DELETE'
+                fetch(`http://localhost:5000/requested/${id}?email=${email}`, {
+                    method: 'DELETE',
+                    credentials: 'include'
                 })
                     .then(res => res.json())
                     .then(data => {
@@ -71,7 +72,9 @@ const MyFoodRequest = () => {
             <Helmet>
                     <title>ZDB | My Food Request</title>
                 </Helmet>
-            <h2 className="uppercase flex justify-center items-center p-2 m-2 mt-4 font-bold text-2xl gap-2 text-purple-700">My Food Request : {foods.length}</h2>
+                <div className="flex justify-center p-4">
+                <h2 className="text-2xl uppercase font-semibold text-green-700">My Food Request : {foods.length}<hr className="p-1 bg-green-700" /> </h2>
+            </div>
           
             
             {

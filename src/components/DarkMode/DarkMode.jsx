@@ -21,7 +21,7 @@ const DarkModeToggleButton = () => {
     return (
         <div className="dark-mode-toggle">
             {/* Step 4: Add a button to toggle dark mode */}
-            <button onClick={toggleDarkMode} className="btn btn-ghost btn-sm rounded-md text-green-700 hover:text-white hover:bg-purple-900">
+            <button onClick={toggleDarkMode} className="btn btn-ghost btn-sm rounded-md text-green-700 hover:text-white hover:bg-green-900">
                 {darkMode ? <FaRegMoon></FaRegMoon> : <FaMoon></FaMoon>}
             </button>
         </div>

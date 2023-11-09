@@ -8,7 +8,7 @@ const Products = () => {
 
 
     useEffect(() => {
-        fetch(`https://zero-dollar-bites-server.vercel.app/food`)
+        fetch(`http://localhost:5000/food`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -28,7 +28,7 @@ const Products = () => {
                 Featured Food
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {foods.map(food => (
+                {firstSixFoods.map(food => (
                     <div key={food._id} className="border-purple-200 border rounded-lg m-1">
                         <div className="p-4 flex flex-col  justify-center items-left">
                             <img className="h-56 w-96 rounded-md" src={food?.photo} alt="" />

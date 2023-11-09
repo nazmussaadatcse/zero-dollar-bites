@@ -16,7 +16,7 @@ const Manage = () => {
     console.log(id);
 
     useEffect(() => {
-        fetch(`https://zero-dollar-bites-server.vercel.app/requested`)
+        fetch(`http://localhost:5000/requested`,{credentials: 'include'})
             .then((res) => res.json())
             .then((data) => {
                 // Filter the data array to find the product by _id
@@ -80,12 +80,13 @@ const Manage = () => {
         console.log(id);
 
 
-        fetch('https://zero-dollar-bites-server.vercel.app/delivered', {
+        fetch('http://localhost:5000/delivered', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(newFood)
+            body: JSON.stringify(newFood),
+            credentials: 'include'
         })
             .then(res => res.json())
             .then(data => {
@@ -93,8 +94,9 @@ const Manage = () => {
                 if (data.insertedId) {
 
 
-                    fetch(`https://zero-dollar-bites-server.vercel.app/requesttodeliver/${id}`, {
-                        method: 'DELETE'
+                    fetch(`http://localhost:5000/requesttodeliver/${id}`, {
+                        method: 'DELETE',
+                        credentials: 'include'
                     })
                         .then(res => res.json())
                         .then(data => {

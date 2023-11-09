@@ -34,12 +34,13 @@ const AddProduct = () => {
         }
         console.log(newFood);
 
-        fetch('https://zero-dollar-bites-server.vercel.app/food', {
+        fetch('http://localhost:5000/food', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(newFood)
+            body: JSON.stringify(newFood),
+            credentials: 'include',
         })
             .then(res => res.json())
             .then(data => {
@@ -53,13 +54,14 @@ const AddProduct = () => {
                         timer: 1500
                     })
                     // Reset the form
-                    // form.reset();
+                    form.reset();
                 }
             })
     }
 
     return (
-        <div className="bg-green-400 rounded-md m-4 p-16 lg:w-3/4 mx-auto text-black">
+        <div className="bg-gray-50 shadow-md rounded-md p-4 md:p-16 
+        lg:w-3/4 w-4/5 mx-auto text-black">
             <Helmet>
                     <title>ZDB | Add Food</title>
                 </Helmet>

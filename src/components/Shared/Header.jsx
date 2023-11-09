@@ -27,7 +27,7 @@ const Header = () => {
 
 
         <div className={`navbar gap mb-8 py-4 shadow-md bg-gray-100`}>
-            <img className="lg:flex justify-center items-center w-28 md:w-32 " src="https://i.ibb.co/kJ4Jjzm/zero-dollar-bites-logo.png" alt="" />
+            <img className="lg:flex justify-center items-center w-20 md:w-32 " src="https://i.ibb.co/kJ4Jjzm/zero-dollar-bites-logo.png" alt="" />
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -45,18 +45,18 @@ const Header = () => {
             </div>
             <div className="navbar-end gap-1">
                 <div className="flex justify-center md:text-sm w-auto items-center border rounded-full px-2">
-                    <p className="font-semibold">
+                    <p className="font-semibold text-xs md:text-sm">
                         {user?.displayName ? user.displayName.slice(0, 10) : null}
                     </p>
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 flex rounded-full">
+                        <div className="w-8 md:w-10 flex rounded-full">
                             <img alt="" src={user?.photoURL ? user.photoURL :'https://i.ibb.co/qsVdmDY/user-site-logo.png'} />
                         </div>
                     </label>
                 </div>
                 {
                     user ?
-                        <button onClick={handleSignOut} className="btn rounded-md btn-sm bg-green-700 hover:bg-purple-950  text-white">SignOut</button> :
+                        <button onClick={handleSignOut} className="btn rounded-md btn-sm bg-green-700 hover:bg-green-600  text-white">SignOut</button> :
                         <div className='flex justify-center items-center gap-2'>
 
                             <Link to={"/login"}>

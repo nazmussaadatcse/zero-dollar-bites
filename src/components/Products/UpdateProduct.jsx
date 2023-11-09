@@ -20,7 +20,7 @@ const UpdateProduct = () => {
     // console.log(productId.id);
 
     useEffect(() => {
-        fetch(`https://zero-dollar-bites-server.vercel.app/food/${id}`)
+        fetch(`http://localhost:5000/food/${id}`,{credentials: 'include'})
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
@@ -61,12 +61,13 @@ const UpdateProduct = () => {
         }
         console.log(newFood);
 
-        fetch(`https://zero-dollar-bites-server.vercel.app/food/${id}`, {
+        fetch(`http://localhost:5000/food/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(newFood)
+            body: JSON.stringify(newFood),
+            credentials: 'include'
         })
             .then(res => res.json())
             .then(data => {
@@ -80,13 +81,14 @@ const UpdateProduct = () => {
                         timer: 1500
                     })
                     // Reset the form
-                    // form.reset();
+                    form.reset();
                 }
             })
     }
 
     return (
-        <div className="bg-green-400 rounded-md m-4 p-16 lg:w-3/4 mx-auto text-black">
+        <div className="bg-gray-50 shadow-md p-4 md:p-16 
+        lg:w-3/4 w-4/5 mx-auto text-black">
             <Helmet>
                     <title>ZDB | Update Food</title>
                 </Helmet>

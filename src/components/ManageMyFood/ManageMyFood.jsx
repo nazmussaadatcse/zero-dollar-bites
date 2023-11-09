@@ -16,7 +16,7 @@ const ManageMyFood = () => {
     const data = foods;
 
     useEffect(() => {
-        fetch(`https://zero-dollar-bites-server.vercel.app/food`)
+        fetch(`http://localhost:5000/food`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
@@ -40,8 +40,9 @@ const ManageMyFood = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`https://zero-dollar-bites-server.vercel.app/food/${id}?email=${email}`, {
-                    method: 'DELETE'
+                fetch(`http://localhost:5000/food/${id}?email=${email}`, {
+                    method: 'DELETE',
+                    credentials: 'include'
                 })
                     .then(res => res.json())
                     .then(data => {
@@ -134,12 +135,12 @@ const ManageMyFood = () => {
 
     return (
 
-        <div className="p-8">
+        <div className="p-8 border border-gray-200">
             <Helmet>
-                    <title>ZDB | Manage My Food</title>
-                </Helmet>
+                <title>ZDB | Manage My Food</title>
+            </Helmet>
             <div className="flex justify-center p-4">
-                <h2 className="text-xl font-semibold text-green-700">Manage My Food : {foods.length}<hr className="p-1 bg-green-700" /> </h2>
+                <h2 className="text-2xl uppercase font-semibold text-green-700">Manage My Food : {foods.length}<hr className="p-1 bg-green-700" /> </h2>
             </div>
             <table {...getTableProps()} className="table">
                 <thead>
