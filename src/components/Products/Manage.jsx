@@ -4,7 +4,7 @@ import { AuthContext } from "../AuthProvider";
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
-            
+
 
 const Manage = () => {
 
@@ -14,9 +14,10 @@ const Manage = () => {
     const productId = useParams();
     const id = productId.id;
     console.log(id);
+    const idP = id;
 
     useEffect(() => {
-        fetch(`https://zero-dollar-bites-server.vercel.app/requested`,{credentials: 'include'})
+        fetch(`https://zero-dollar-bites-server.vercel.app/requested`, { credentials: 'include' })
             .then((res) => res.json())
             .then((data) => {
                 // Filter the data array to find the product by _id
@@ -101,6 +102,15 @@ const Manage = () => {
                         .then(res => res.json())
                         .then(data => {
                             if (data.deletedCount > 0) {
+                                fetch(`https://zero-dollar-bites-server.vercel.app/food/${idP}?email=${user.email}}`, {
+                                    method: 'DELETE',
+                                    credentials: 'include'
+                                })
+                                    .then(res => res.json())
+                                    .then(data => {
+                                        console.log(data);
+                                    })
+
                                 // console.log('deleted successfully');
                                 const remainingFood = foods.filter(food => food._id !== id);
                                 setFoods(remainingFood);
@@ -111,9 +121,13 @@ const Manage = () => {
                                     showConfirmButton: false,
                                     timer: 2000
                                 })
+
+
                                 // console.log(foods);
                             }
                         })
+
+
 
                     // Reset the form
                     // form.reset();
@@ -127,8 +141,8 @@ const Manage = () => {
     return (
         <div className="border border-gray-200">
             <Helmet>
-                    <title>ZDB | Manage</title>
-                </Helmet>
+                <title>ZDB | Manage</title>
+            </Helmet>
             <h2 className="uppercase flex justify-center items-center p-2 m-2 mt-4 font-bold text-2xl gap-2 text-purple-700">Manage Food Request : {foods?.length}</h2>
 
 

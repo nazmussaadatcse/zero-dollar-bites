@@ -60,7 +60,7 @@ const AddProduct = () => {
     }
 
     return (
-        <div className="bg-gray-50 shadow-md rounded-md p-4 md:p-16 
+        <div className="bg-gray-50 shadow-md rounded-md p-4 my-8 md:p-16 
         lg:w-3/4 w-4/5 mx-auto text-black">
             <Helmet>
                     <title>ZDB | Add Food</title>

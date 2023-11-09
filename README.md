@@ -1,17 +1,63 @@
 # Zero Dollar Bites MERN Stack Project with Firebase Authentication
 [site](https://zero-dollar-bites.web.app/)
+[site2](https://zero-dollar-bites.web.app/)
 
 Welcome to Zero Dollar Bites, a powerful MERN (MongoDB, Express, React, Node.js) stack project featuring robust Firebase Authentication. In this repository, we demonstrate the development of a full-stack web application with an emphasis on secure user authentication through Firebase. Firebase Authentication simplifies the process of adding safe and reliable user registration, login, and logout functionality to your web application.
 
 
-* Project Highlights
-User Authentication: Zero Dollar Bites leverages Firebase Authentication, allowing users to create accounts using their email and password or log in using their preferred social media accounts, including Google, Facebook, and more.
+# Key Features
+1. User Authentication
+Description:
+Users can register and log in securely using Firebase Authentication.
+Private routes ensure that only authenticated users can access certain functionalities.
+2. Food Management
+Description:
+Authenticated users have full control over their food items.
+Users can add new food items with details such as name, quantity, photo, pickup location, expiry date, and additional notes.
+They can update the details of their existing food items.
+Deletion of food items is allowed, but only for the items added by the authenticated user.
+3. Donation and Request
+Description:
+Users can contribute to reducing food waste by donating surplus food items.
+Donated food items are made available for other users to request.
+Users can browse the available food items and send requests for the ones they need.
+4. Food Request Management
+Description:
+Authenticated users can view and manage their food requests.
+They can cancel their requests if needed.
+5. Delivery Management
+Description:
+Users with donated food items can see active requests for their items.
+After delivering the food, it is automatically removed from the request page and the general food listing.
+6. Security and Authorization
+Description:
+Users are only allowed to update or delete food items they have added.
+Private routes restrict unauthorized access to functionalities such as adding, updating, managing, and requesting food.
 
-Protected Private Routes: Our project features protected routes, ensuring that only authenticated users gain access to specific areas of the application. Firebase Authentication plays a pivotal role in effortlessly implementing these secure, private routes.
+# How It Works
+* Authentication:
 
-CRUD Operations: We've implemented CRUD (Create, Read, Update, Delete) operations, demonstrating how to work with data stored in MongoDB. Users can create, read, update, and delete data within the application, showcasing the data manipulation capabilities of MongoDB.
+Users register or log in using Firebase Authentication.
+Private routes ensure that only authenticated users can access protected functionalities.
+* Food Management:
 
-Security and Scalability: Firebase Authentication takes care of vital security aspects, including password hashing and security best practices. The serverless architecture of Firebase ensures scalability and high availability for your application.
+Authenticated users add new food items with details.
+They can update or delete their own food items.
+* Donation and Request:
+
+Users can donate food items, making them available for others to request.
+Users can browse the list of available food items and send requests.
+* Food Request Management:
+
+Authenticated users can view and cancel their food requests.
+* Delivery Management:
+
+Users with donated food items can see active requests.
+After delivering the food, it is automatically removed from the request page and the general food listing.
+Security and Authorization:
+
+Users are restricted to managing only their own food items.
+Private routes ensure that unauthorized users cannot access certain functionalities.
 
 * Technology Stack
 MongoDB: A flexible NoSQL database for efficient data storage and retrieval.
