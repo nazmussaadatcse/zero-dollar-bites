@@ -102,7 +102,7 @@ const Manage = () => {
                         .then(res => res.json())
                         .then(data => {
                             if (data.deletedCount > 0) {
-                                fetch(`https://zero-dollar-bites-server.vercel.app/food/${idP}?email=${user.email}}`, {
+                                fetch(`https://zero-dollar-bites-server.vercel.app/food/${idP}?email=${user.email}`, {
                                     method: 'DELETE',
                                     credentials: 'include'
                                 })
